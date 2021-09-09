@@ -17,7 +17,7 @@ int check_cycle(listint_t *list)
 			posi = posi->next;
 		} while (posi != NULL && posi != head);
 	}
-	if (posi == head)
+	if (posi != NULL)
 		return (1);
 	return (0);
 }
