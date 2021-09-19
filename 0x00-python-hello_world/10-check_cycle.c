@@ -13,9 +13,6 @@ int check_cycle(listint_t *list)
 	head = list, posi = list;
 	if (list != NULL)
 	{
-		if (list == posi)
-			return (1);
-
 		do {
 			posi = posi->next;
 		} while (posi != NULL && posi != head);
