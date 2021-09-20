@@ -2,13 +2,13 @@
 if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
     from sys import argv
-    if argv[2] == '+':
+    if len(argv) == 4 and argv[2] == '+':
         res = add(int(argv[1]), int(argv[3]))
-    elif argv[2] == '*':
+    elif len(argv) == 4 and argv[2] == '*':
         res = mul(int(argv[1]), int(argv[3]))
-    elif argv[2] == '-':
+    elif len(argv) == 4 and argv[2] == '-':
         res = sub(int(argv[1]), int(argv[3]))
-    elif argv[2] == '/':
+    elif len(argv) == 4 and argv[2] == '/':
         res = div(int(argv[1]), int(argv[3]))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
