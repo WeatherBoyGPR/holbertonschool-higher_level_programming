@@ -13,5 +13,6 @@ def safe_print_list_integers(mylist=[], x=0):
             res += 1
         finally:
             num += 1
-    print("")
+    if res:
+        print("")
     return res
