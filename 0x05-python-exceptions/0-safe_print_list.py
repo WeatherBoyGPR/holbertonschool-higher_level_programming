@@ -5,9 +5,9 @@ def safe_print_list(my_list=[], x=0):
         if i >= x:
             break
         try:
-            print("{}".format(string))
+            print("{}".format(string), end='')
         except TypeError:
             print("something about a non-empty format string")
-        finally:
-            i += 1
+        i += 1
+    print("")
     return i
