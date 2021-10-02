@@ -1,0 +1,42 @@
+# unit tests for 0-add_integer.py
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+# basic calculation: should work
+
+>>> add_integer(13, 39)
+52
+
+# calculation with a negative number: should work
+
+>>> add_integer(50, -70)
+-20
+
+# calculation with a float: should be an integer
+
+>>> add_integer(50, 0.2)
+50
+
+# using a string as a value: should raise a TypeError
+
+>>> add_integer("THE WONDER OF YOU", 68)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+# using two strings as a value: should raise a TypeError
+
+>>> add_integer("CANZONI PREFERITE", "ONlY THE STRONG")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+# b as a boolean: should raise a TypeError for b
+
+>>> add_integer(12321, True)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+# a as a boolean: should raise a TypeError for a
+
+>>> add_integer(False, 12312)
+Traceback (most recent call last):
+TypeError: a must be an integer
