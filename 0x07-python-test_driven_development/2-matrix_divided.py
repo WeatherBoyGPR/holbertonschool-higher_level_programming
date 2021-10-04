@@ -16,7 +16,6 @@ def matrix_divided(matrix, div):
         raise TypeError(warning + "of integers/floats")
     y = len(matrix[0])
     res = []
-    wa
     if div is 0:
         raise ZeroDivisionError("division by zero")
     if type(div) is not int and type(div) is not float:
