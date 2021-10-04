@@ -1,0 +1,29 @@
+# unit tests for print_square.py
+
+>>> print_square = __import__('4-print_square').print_square
+
+# basic square: should work
+
+>>> print_square(4)
+####
+####
+####
+####
+
+# size as non integer: raise TypeError
+
+>>> print_square("WATCH ME FLY MAMA")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+# size as negative number: raise TypeError
+
+>>> print_square(-1997)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+# size as float less than 0: raise TypeError
+
+>>> print_square(-5.6)
+Traceback (most recent call last):
+TypeError: size must be an integer
