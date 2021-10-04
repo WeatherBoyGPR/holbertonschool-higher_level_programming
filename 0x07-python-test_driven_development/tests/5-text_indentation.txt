@@ -1,0 +1,19 @@
+# unit tests for text_indendation.py
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# basic input test: should work
+
+>>> text_indentation("THE VOICE: RUNS OUT,EVENTUALLY. UNDERSTAND?")
+THE VOICE:
+<BLANKLINE>
+RUNS OUT,EVENTUALLY.
+<BLANKLINE>
+UNDERSTAND?
+<BLANKLINE>
+
+# text as non-string value: TypeError
+
+>>> text_indentation(["THEY ARE COMING FOR ME", "PLEASE PICK UP THE PHONE"])
+Traceback (most recent call last):
+TypeError: text must be a string
