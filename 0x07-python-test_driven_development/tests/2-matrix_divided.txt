@@ -1,0 +1,65 @@
+# unit tests for 2-matrix_divided.py
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix1 = [[12, 12, 12], [12, 12, 12]]
+>>> matrix2 = [[8.88, 8.88], [8.88, 8.88]]
+>>> matrix3 = [[12, "SUPRISE OF SUMMER", "felt", True],[15, "Rude cherry breeze", False, "Slicked back"]]
+>>> matrix4 = [[1, 2, 3], [4, 5]]
+>>> matrix5 = [[True, True, False], [13, True, False]]
+
+# basic calculation with uniform matrix: should work
+
+>>> matrix_divided(matrix1, 3)
+[[4.0, 4.0, 4.0], [4.0, 4.0, 4.0]]
+
+# division with floats: result should be rounded to 2 decimal places
+
+>>> matrix_divided(matrix2 , 7)
+[[1.27, 1.27], [1.27, 1.27]]
+
+# division with floats against integers: results rounded to 2 decimal places
+
+>>> matrix_divided(matrix1, 5.69)
+[[2.11, 2.11, 2.11], [2.11, 2.11, 2.11]]
+
+# division with integers against floats: results rounded to 2 decimal places
+
+>>> matrix_divided(matrix2, 2)
+[[4.44, 4.44], [4.44, 4.44]]
+
+# matrix with non integer/float variable: raise TypeError
+
+>>> matrix_divided(matrix3, 45)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# matrix with boolean values: raise TypeError
+
+>>> matrix_divided(matrix5, 12)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# matrix with varying row length: raise TypeError
+
+>>> matrix_divided(matrix4, 5)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+# div is neither integer or float: raise TypeError
+
+>>> matrix_divided(matrix1, "all alone on a late night")
+Traceback (most recent call last):
+TypeError: div must be a number
+
+# div is boolean variable: raise TypeError
+
+>>> matrix_divided(matrix1, True)
+Traceback (most recent call last):
+TypeError: div must be a number
+
+# div is zero: raise ZeroDivisionError
+
+>>> matrix_divided(matrix1, 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
