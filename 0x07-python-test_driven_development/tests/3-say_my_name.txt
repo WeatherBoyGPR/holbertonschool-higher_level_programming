@@ -1,0 +1,25 @@
+# unit tests for 3-say_my_name.py
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# basic print with both strings: should work
+
+>>> say_my_name("RISSOTO", "NERO")
+My name is RISSOTO NERO
+
+# basic print only with first string: should work
+
+>>> say_my_name("URBAN")
+My name is URBAN 
+
+# first_name is non-string variable: raise TypeError
+
+>>> say_my_name(True, "GUERILLA")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+# last_name is non-string variable: raise TypeError
+
+>>> say_my_name("HORACE", ["WIMP"])
+Traceback (most recent call last):
+TypeError: last_name must be a string
