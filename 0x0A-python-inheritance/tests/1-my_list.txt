@@ -1,0 +1,25 @@
+# unit tests for 1-my_list.py
+
+>>> Mylist = __import__('1-my_list').MyList
+
+
+# Basic input with appending
+>>> a_list = Mylist
+>>> a_list.append(1)
+>>> a_list.append(2)
+>>> a_list.append(3)
+>>> a_list.append(4)
+>>> print(a_list)
+[1, 2, 3, 4]
+
+# Inserting values with indexing
+>>> a_list = Mylist(1, 2, 3)
+>>> a_list[0] = 4
+>>> print(a_list)
+[4, 2, 3]
+
+# TypeError will be raised for non iterable object
+
+>>> a_list = MyList(None)
+Traceback (most recent call last):
+TypeError: 'NoneType' object is non iterable
