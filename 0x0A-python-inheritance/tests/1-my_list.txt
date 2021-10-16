@@ -22,7 +22,6 @@
 >>> a_list = Mylist()
 >>> a_list.print_sorted()
 []
-[]
 
 # TypeError will be raised for non iterable object
 
