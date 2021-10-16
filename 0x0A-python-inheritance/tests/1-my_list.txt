@@ -18,8 +18,21 @@
 >>> print(a_list)
 [4, 2, 3]
 
+# print_sorted with empty list: Shouldn't sort anything
+>>> a_list = Mylist()
+>>> a_list.print_sorted()
+[]
+[]
+
 # TypeError will be raised for non iterable object
 
 >>> a_list = Mylist(None)
 Traceback (most recent call last):
 TypeError: 'NoneType' object is not iterable
+
+# With print_sorted, TypeError will be raised for multi-type list
+
+>>> a_list = Mylist([1, "DAICON", 5, "IV"])
+>>> a_list.print_sorted()
+Traceback (most recent call last):
+TypeError: unorderable types: str() < int()
