@@ -38,6 +38,15 @@ class Square(Rectangle):
             str(self.y) + " - " + str(self.height)
         )
 
+    def to_dictionary(self):
+        """ Returns dictionary representation of square """
+        return (
+            {
+                'id': self.id, 'size': self.size,
+                'x': self.x, 'y': self.y
+            }
+        )
+
     def update(self, *args, **kwargs):
         """ update
         Can update any value in below order:
