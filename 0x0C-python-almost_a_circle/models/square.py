@@ -38,6 +38,43 @@ class Square(Rectangle):
             str(self.y) + " - " + str(self.height)
         )
 
+    def update(self, *args, **kwargs):
+        """ update
+        Can update any value in below order:
+        id, size (int), x (int), y (int)
+        """
+        if args and len(args) > 0:
+            i = 0
+            for rot in args:
+                i += 1
+                if i == 1:
+                    setattr(self, "id", rot)
+                    continue
+                elif i == 2:
+                    self.size = rot
+                    continue
+                elif i == 3:
+                    self.x = rot
+                    continue
+                elif i == 4:
+                    self.y = rot
+                    break
+
+        elif kwargs and len(kwargs) > 0:
+            for key, val in kwargs.items():
+                if key is "id":
+                    setattr(self, "id", val)
+                    continue
+                elif key is "size":
+                    self.size = val
+                    continue
+                elif key is "x":
+                    self.x = val
+                    continue
+                elif key is "y":
+                    self.y = val
+                    continue
+
     @property
     def size(self):
         """ Getter for size """

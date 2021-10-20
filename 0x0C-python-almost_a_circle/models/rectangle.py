@@ -56,20 +56,16 @@ class Rectangle(Base):
                     setattr(self, "id", rot)
                     continue
                 if i == 2:
-                    self.integer_validation(rot, "width")
-                    self.__width = rot
+                    self.width = rot
                     continue
                 if i == 3:
-                    self.integer_validation(rot, "height")
-                    self.__height = rot
+                    self.height = rot
                     continue
                 if i == 4:
-                    self.integer_validation(rot, "x", True)
-                    self.__x = rot
+                    self.x = rot
                     continue
                 if i == 5:
-                    self.integer_validation(rot, "y", True)
-                    self.__y = rot
+                    self.y = rot
                     break
 
         elif kwargs and len(kwargs) > 0:
@@ -78,20 +74,16 @@ class Rectangle(Base):
                     setattr(self, "id", val)
                     continue
                 if key is "width":
-                    self.integer_validation(val, "width")
-                    self.__width = val
+                    self.width = val
                     continue
                 if key is "height":
-                    self.integer_validation(val, "height")
-                    self.__height = val
+                    self.height = val
                     continue
                 if key is "x":
-                    self.integer_validation(val, "x", True)
-                    self.__x = val
+                    self.x = val
                     continue
                 if key is "y":
-                    self.integer_validation(val, "y", True)
-                    self.__y = val
+                    self.y = val
                     continue
 
     def integer_validation(self, value, name="FORGOT", posi=False):
