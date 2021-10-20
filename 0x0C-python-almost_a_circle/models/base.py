@@ -57,6 +57,6 @@ class Base():
     @classmethod
     def create(cls, **dictionary):
         """ Returns class instance with attributes preset """
-        res = cls(1, 1, 1)
+        res = cls(1, 1)
         res.update(**dictionary)
         return res
