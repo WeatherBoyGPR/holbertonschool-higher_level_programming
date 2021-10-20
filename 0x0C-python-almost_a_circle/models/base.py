@@ -53,3 +53,10 @@ class Base():
         dlist = [cls.to_dictionary(a) for a in list_objs]
         with open(cls.__name__ + ".json", 'w', encoding='utf-8') as f:
             f.write(cls.to_json_string(dlist))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Returns class instance with attributes preset """
+        res = cls(1, 1, 1)
+        res.update(**dictionary)
+        return res
