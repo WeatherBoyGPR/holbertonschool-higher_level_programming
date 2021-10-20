@@ -43,28 +43,56 @@ class Rectangle(Base):
             str(self.y) + " - " + str(self.width) + "/" + str(self.height)
         )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ update
         Can update any value in below order:
         id, width (int), height (int), x (int), y (int)
         """
-        i = 0
-        for rot in args:
-            i += 1
-            if i == 1:
-                setattr(self, "id", rot)
-            if i == 2:
-                self.integer_validation(rot, "width")
-                self.__width = rot
-            if i == 3:
-                self.integer_validation(rot, "height")
-                self.__height = rot
-            if i == 4:
-                self.integer_validation(rot, "x", True)
-                self.__x = rot
-            if i == 5:
-                self.integer_validation(rot, "y", True)
-                self.__y = rot
+        if args and len(args) > 0:
+            i = 0
+            for rot in args:
+                i += 1
+                if i == 1:
+                    setattr(self, "id", rot)
+                    continue
+                if i == 2:
+                    self.integer_validation(rot, "width")
+                    self.__width = rot
+                    continue
+                if i == 3:
+                    self.integer_validation(rot, "height")
+                    self.__height = rot
+                    continue
+                if i == 4:
+                    self.integer_validation(rot, "x", True)
+                    self.__x = rot
+                    continue
+                if i == 5:
+                    self.integer_validation(rot, "y", True)
+                    self.__y = rot
+                    break
+
+        elif kwargs and len(kwargs) > 0:
+            for key, val in kwargs.items():
+                if key is "id":
+                    setattr(self, "id", val)
+                    continue
+                if key is "width":
+                    self.integer_validation(val, "width")
+                    self.__width = val
+                    continue
+                if key is "height":
+                    self.integer_validation(val, "height")
+                    self.__height = val
+                    continue
+                if key is "x":
+                    self.integer_validation(val, "x", True)
+                    self.__x = val
+                    continue
+                if key is "y":
+                    self.integer_validation(val, "y", True)
+                    self.__y = val
+                    continue
 
     def integer_validation(self, value, name="FORGOT", posi=False):
         """ integer_validation
