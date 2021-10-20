@@ -57,6 +57,9 @@ class Base():
     @classmethod
     def create(cls, **dictionary):
         """ Returns class instance with attributes preset """
-        res = cls(1, 1)
+        if cls.__name__ is "Square":
+            res = cls(1)
+        if cls.__name__ is "Rectangle":
+            res = cls(1, 1)
         res.update(**dictionary)
         return res
