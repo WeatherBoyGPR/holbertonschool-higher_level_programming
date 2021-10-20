@@ -43,6 +43,15 @@ class Rectangle(Base):
             str(self.y) + " - " + str(self.width) + "/" + str(self.height)
         )
 
+    def to_dictionary(self):
+        """ Returns dictionary representation of rectangle """
+        return (
+            {
+                'id': self.id, 'width': self.width,
+                'height': self.height, 'x': self.x, 'y': self.y
+            }
+        )
+
     def update(self, *args, **kwargs):
         """ update
         Can update any value in below order:
