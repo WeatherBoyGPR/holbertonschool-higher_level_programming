@@ -5,6 +5,18 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """ Rectangle
+    Represents a rectangle
+    Cls Attributes:
+        nb_objects (int) - total number of objects
+    Obj Attributes:
+        id: simple id of the object
+        width (int) > 0: width of rectangle
+        height (int) > 0: height of rectangle
+        x (int) >= 0: x coord of rectangle
+        y (int) >= 0: y coord of rectangle
+    """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """ __init__
         Args:
