@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """ Contains Base class """
 
+import json
+
 
 class Base():
     """ Base
@@ -8,7 +10,7 @@ class Base():
     Cls Attributes:
         nb_objects (int) - total number of objects
     Obj Attributes:
-        id (int): simple id of the object
+        id: simple id of the object
     """
     __nb_objects = 0
 
@@ -22,3 +24,14 @@ class Base():
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """ to_json_string
+        returns json string from list_dictionaries, empty list string on None
+        Args:
+            list_dictionaries: a list of dictionaries
+        """
+        if list_dictionaries is None:
+            return "[]"
+        return json.dumps(list_dictionaries)
