@@ -36,6 +36,13 @@ class Base():
             return "[]"
         return json.dumps(list_dictionaries)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """ returns list of dictionaries from json string representation """
+        if json_string is None:
+            return []
+        return json.loads(json_string)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """ Writes json string of a list of rectangles/squares to a file """
