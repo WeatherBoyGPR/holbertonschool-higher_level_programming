@@ -35,3 +35,14 @@ class Base():
         if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """ Writes json string of a list of rectangles/squares to a file """
+        if list_objs is None:
+            with open(cls.__name__ + ".json", 'w', encoding='utf-8') as f:
+                f.write(cls.to_json_string(list_objs))
+                return
+        dlist = [cls.to_dictionary(a) for a in list_objs]
+        with open(cls.__name__ + ".json", 'w', encoding='utf-8') as f:
+            f.write(cls.to_json_string(dlist))
