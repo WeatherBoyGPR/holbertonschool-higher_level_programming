@@ -2,7 +2,7 @@
 """ Contains Base class """
 
 import json
-
+import os
 
 class Base():
     """ Base
@@ -53,6 +53,14 @@ class Base():
         dlist = [cls.to_dictionary(a) for a in list_objs]
         with open(cls.__name__ + ".json", 'w', encoding='utf-8') as f:
             f.write(cls.to_json_string(dlist))
+
+    @classmethod
+    def load_from_file(cls):
+        """ Loads json representations of instances from file """
+        if os.path.exists(str(cls.__name__) + ".json"):
+            with open(str(cls.__name__) + ".json", encoding='utf-8') as f:
+                return [cls.create(**ob) for ob in cls.from_json_string(f.read())]
+        return []
 
     @classmethod
     def create(cls, **dictionary):

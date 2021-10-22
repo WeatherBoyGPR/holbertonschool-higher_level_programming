@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Contains Rectangle class """
 
+import json
 from models.base import Base
 
 
@@ -79,23 +80,24 @@ class Rectangle(Base):
 
         elif kwargs and len(kwargs) > 0:
             for key, val in kwargs.items():
-                if key is "id":
+                if key == "id":
                     setattr(self, "id", val)
                     continue
-                if key is "width":
+                if key == "width":
                     self.width = val
                     continue
-                if key is "height":
+                if key == "height":
                     self.height = val
                     continue
-                if key is "x":
+                if key == "x":
                     self.x = val
                     continue
-                if key is "y":
+                if key == "y":
                     self.y = val
                     continue
 
-    def integer_validation(self, value, name="FORGOT", posi=False):
+    @staticmethod
+    def integer_validation(value, name="FORGOT", posi=False):
         """ integer_validation
         Will test if value is valid, has two modes to modulate if 0 is valid
         Raises TypeError or ValueError if non-valid

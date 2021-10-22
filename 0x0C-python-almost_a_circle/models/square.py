@@ -71,16 +71,16 @@ class Square(Rectangle):
 
         elif kwargs and len(kwargs) > 0:
             for key, val in kwargs.items():
-                if key is "id":
+                if key == "id":
                     setattr(self, "id", val)
                     continue
-                elif key is "size":
+                elif key == "size":
                     self.size = val
                     continue
-                elif key is "x":
+                elif key == "x":
                     self.x = val
                     continue
-                elif key is "y":
+                elif key == "y":
                     self.y = val
                     continue
 
