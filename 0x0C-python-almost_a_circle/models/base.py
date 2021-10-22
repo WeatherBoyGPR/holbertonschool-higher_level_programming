@@ -4,6 +4,7 @@
 import json
 import os
 
+
 class Base():
     """ Base
     Will serve as a base for rectangle and square classes
@@ -57,9 +58,11 @@ class Base():
     @classmethod
     def load_from_file(cls):
         """ Loads json representations of instances from file """
-        if os.path.exists(str(cls.__name__) + ".json"):
-            with open(str(cls.__name__) + ".json", encoding='utf-8') as f:
-                return [cls.create(**ob) for ob in cls.from_json_string(f.read())]
+        s = ".json"
+        if os.path.exists(str(cls.__name__) + s):
+            with open(str(cls.__name__) + s, encoding='utf-8') as f:
+                i = cls.from_json_string(f.read())
+                return [cls.create(**ob) for ob in i]
         return []
 
     @classmethod
