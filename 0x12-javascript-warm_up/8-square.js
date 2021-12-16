@@ -4,7 +4,7 @@ const err = 'Missing size';
 const nu = Math.floor(Number(process.argv[2]));
 let line = '';
 
-if (typeof nu === 'number') {
+if (nu && !(isNaN(parseInt(nu, 10)))) {
   for (let j = 0; j < nu; j++) {
     line += 'X';
   }
