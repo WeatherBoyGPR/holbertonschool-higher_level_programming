@@ -1,16 +1,22 @@
 #!/usr/bin/node
 
-let res = 0;
 let gre;
+let res = 0;
+const len = process.argv.length;
 
-if (process.argv.length > 3) {
-  gre = Number(process.argv[2]);
-  res = gre;
-  for (const key in process.argv) {
-    if (gre < Number(process.argv[key])) {
-      gre = Number(process.argv[key]);
-    } else if (res < Number(process.argv[key])) {
-      res = Number(process.argv[key]);
+if (len > 3) {
+  if (process.argv[2] >= process.argv[3]) {
+    gre = process.argv[2];
+    res = process.argv[3];
+  } else {
+    gre = process.argv[3];
+    res = process.argv[2];
+  }
+
+  for (let i = 4; i < len; i++) {
+    if (process.argv[i] > gre) {
+      res = gre;
+      gre = process.argv[i];
     }
   }
 }
