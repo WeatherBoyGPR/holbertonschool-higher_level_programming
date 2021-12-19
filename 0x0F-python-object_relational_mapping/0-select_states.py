@@ -2,6 +2,7 @@
 # Lists states from database hbtn_0e_0_usa
 
 import sys
+from sys import argv
 import MySQLdb
 
 if __name__ == "__main__":
