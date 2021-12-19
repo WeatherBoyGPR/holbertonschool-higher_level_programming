@@ -9,3 +9,5 @@ if __name__ == "__main__":
     cur.execute("SELECT * FROM `states`")
     for line in cur.fetchall():
         print(line)
+    cur.close()
+    db.close()
