@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Lists states from database hbtn_0e_0_usa
+""" Lists states from database hbtn_0e_0_usa """
 
 import sys
 from sys import argv

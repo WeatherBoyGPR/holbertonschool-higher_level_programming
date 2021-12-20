@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Will list states with name same as argument
+""" Will list states with name same as argument """
 
 import MySQLdb
 import sys

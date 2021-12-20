@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# SQL Injection proof, retrieves states specified by last arg
+""" SQL Injection proof, retrieves states specified by last arg """
 
 import sys
 import MySQLdb
