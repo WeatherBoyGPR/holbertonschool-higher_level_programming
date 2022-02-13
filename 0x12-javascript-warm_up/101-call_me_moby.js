@@ -6,4 +6,4 @@ exports.callMeMoby = function (num, func) {
     func();
     i++;
   }
-}
+};
