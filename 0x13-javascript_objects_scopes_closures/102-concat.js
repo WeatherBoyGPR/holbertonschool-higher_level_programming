@@ -11,7 +11,6 @@ if (process.argv.length >= 5) {
 
   const input1 = fs.readFileSync(path[0], 'utf8');
   const input2 = fs.readFileSync(path[1], 'utf8');
-  console.log(input1 + input2);
 
   fs.writeFileSync(path[2], input1 + input2);
 }
