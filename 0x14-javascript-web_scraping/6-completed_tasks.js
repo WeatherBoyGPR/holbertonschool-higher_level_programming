@@ -16,13 +16,15 @@ if (process.argv.length < 3) {
     const list = JSON.parse(body);
     const res = {};
 
-    for (const i in list) {
-      if (res[String(list[i].userId)] === undefined) {
-        res[String(list[i].userId)] = 0;
+    if (list.length > 0) {
+      for (const i in list) {
+        if (res[String(list[i].userId)] === undefined) {
+          res[String(list[i].userId)] = 0;
+        }
       }
-    }
-    for (const i in list) {
-      res[String(list[i].userId)] += 1;
+      for (const i in list) {
+        res[String(list[i].userId)] += 1;
+      }
     }
     console.log(res);
   });
