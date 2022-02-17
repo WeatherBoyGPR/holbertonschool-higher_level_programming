@@ -18,10 +18,11 @@ if (process.argv.length < 3) {
 
     for (const i in list) {
       if (res[String(list[i].userId)] === undefined) {
-        res[String(list[i].userId)] = 1;
-      } else {
-        res[String(list[i].userId)] += 1;
+        res[String(list[i].userId)] = 0;
       }
+    }
+    for (const i in list) {
+      res[String(list[i].userId)] += 1;
     }
     console.log(res);
   });
