@@ -8,7 +8,7 @@ const Request = require('request');
 if (process.argv.length < 3) {
   console.log('invalid number of args');
 } else {
-  Request(process.argv[2] + '?completed=true', (error, response, body) => {
+  Request(process.argv[2], (error, response, body) => {
     if (error) {
       console.log(error);
       return;
@@ -18,12 +18,14 @@ if (process.argv.length < 3) {
 
     if (list.length > 0) {
       for (const i in list) {
-        if (res[String(list[i].userId)] === undefined) {
+        if (res[String(list[i].userId)] === undefined && list[i].completed === true) {
           res[String(list[i].userId)] = 0;
         }
       }
       for (const i in list) {
-        res[String(list[i].userId)] += 1;
+        if (res[String(list[i].userId)] !== undefined && (list[i]).completed === true) {
+          res[String(list[i].userId)] += 1;
+        }
       }
     }
     console.log(res);
