@@ -8,7 +8,7 @@ if __name__ == "__main__":
 
     argIn = [sys.argv[1], sys.argv[2], sys.argv[3]]
 
-    DB = MySQLdb.connect('localhost', argIn[0], argIn[1], argIn[2])
+    DB = MySQLdb.connect('localhost', argIn[0], argIn[1], argIn[2], port=3306)
     CR = DB.cursor()
 
     CR.execute('SELECT * FROM states ORDER BY id ASC')
