@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Will list all states from the database hbtn_0e_0_usa
+# Will list information about specified state from the database hbtn_0e_0_usa
 
 import MySQLdb
 import sys
@@ -12,8 +12,6 @@ if __name__ == "__main__":
             HAVING `name`= '{}'\
             ORDER BY `id` ASC'''
     state = re.search('^[\\w\\d]+', argIn[3]).group()
-
-    print(state)
 
     DB = MySQLdb.connect('localhost', argIn[0], argIn[1], argIn[2], port=3306)
     CR = DB.cursor()
