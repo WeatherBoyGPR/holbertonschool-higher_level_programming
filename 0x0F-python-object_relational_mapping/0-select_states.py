@@ -4,16 +4,18 @@
 import MySQLdb
 import sys
 
-argIn = [sys.argv[1], sys.argv[2], sys.argv[3]]
+if __name__ == "__main__":
 
-DB = MySQLdb.connect('localhost', argIn[0], argIn[1], argIn[2])
-CR = DB.cursor()
+    argIn = [sys.argv[1], sys.argv[2], sys.argv[3]]
 
-CR.execute('SELECT * FROM states ORDER BY id ASC')
-data = CR.fetchall()
+    DB = MySQLdb.connect('localhost', argIn[0], argIn[1], argIn[2])
+    CR = DB.cursor()
 
-for i in data:
-    print(i)
+    CR.execute('SELECT * FROM states ORDER BY id ASC')
+    data = CR.fetchall()
 
-CR.close()
-DB.close()
+    for i in data:
+        print(i)
+
+    CR.close()
+    DB.close()
