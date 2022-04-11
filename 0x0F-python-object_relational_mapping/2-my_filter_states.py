@@ -11,11 +11,12 @@ if __name__ == "__main__":
     query = '''SELECT * FROM `states` \
             HAVING `name`= '{}'\
             ORDER BY `id` ASC'''
+    state = argIn[3]
 
     DB = MySQLdb.connect('localhost', argIn[0], argIn[1], argIn[2], port=3306)
     CR = DB.cursor()
 
-    CR.execute(query.format(argIn[3]))
+    CR.execute(query.format(state))
     data = CR.fetchall()
 
     for i in data:
