@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# Will list all states from the database hbtn_0e_0_usa
+''' Will list all states from the database hbtn_0e_0_usa '''
+
 import sys
 import MySQLdb
 
@@ -15,3 +16,6 @@ if __name__ == "__main__":
 
     for i in data:
         print(i)
+
+    CR.close()
+    DB.close()
