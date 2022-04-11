@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     argIn = [sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]]
     query = '''SELECT * FROM `states` \
-            HAVING `name`= '{}'\
+            HAVING `name`= '{:s}'\
             ORDER BY `id` ASC'''
     state = argIn[3]
 
