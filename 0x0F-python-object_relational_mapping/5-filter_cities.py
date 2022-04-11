@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' Will list all cities in specified states from the database hbtn_0e_4_usa '''
+''' Will list all cities in state from database hbtn_0e_4_usa '''
 
 import MySQLdb
 import sys
