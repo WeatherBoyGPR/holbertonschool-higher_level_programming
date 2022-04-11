@@ -20,7 +20,8 @@ if __name__ == "__main__":
     data = CR.fetchall()
 
     for i in data:
-        print(i)
+        if (i[1] == state):
+            print(i)
 
     CR.close()
     DB.close()
