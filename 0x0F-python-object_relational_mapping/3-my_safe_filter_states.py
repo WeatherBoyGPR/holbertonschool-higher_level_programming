@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Will list information about specified state from the database hbtn_0e_0_usa
+''' Will list information about specified state from the database hbtn_0e_0_usa '''
 
 import MySQLdb
 import sys
