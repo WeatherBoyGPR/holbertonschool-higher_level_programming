@@ -9,6 +9,6 @@ Base = declarative_base()
 
 class State(Base):
     """ Class for state sdl storage """
-    __tablename__ = 'users'
+    __tablename__ = 'states'
     id = Column(Integer, primary_key=True, unique=True, nullable=False)
     name = Column(String(128), nullable=False)
