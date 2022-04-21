@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Displays body size of curl response
 
 curl -s $1 | wc -c
