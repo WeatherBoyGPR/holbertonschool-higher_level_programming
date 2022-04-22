@@ -10,6 +10,6 @@ if __name__ == "__main__":
     with urlopen(url) as res:
         data = res.read()
         print("Body response:")
-        print("\t- type: {}".format(type(data)))
-        print("\t- content: {}".format(data))
-        print("\t- uf8 content: {}".format(data.decode('utf')))
+        print("    - type: {}".format(type(data)))
+        print("    - content: {}".format(data))
+        print("    - uf8 content: {}".format(data.decode('utf')))
