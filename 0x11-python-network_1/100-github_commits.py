@@ -18,7 +18,7 @@ if __name__ == "__main__":
         res = r.json()
         for i in range(0, 10):
             sha = res[i].get('sha')
-            author = res[i].get('author').get('login')
+            author = res[i].get('commit').get('author').get('name')
             print("{}: {}".format(sha, author))
     except IndexError:
         pass
