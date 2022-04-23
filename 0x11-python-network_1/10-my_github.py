@@ -11,4 +11,9 @@ if __name__ == "__main__":
     passwd = argv[2]
 
     r = requests.get(url, auth=HTTPBasicAuth(usr, passwd))
-    print(r.json()['id'])
+    try:
+        res = r.json()
+    except ValueError:
+        print(None)
+    else:
+        print(res['id'])
