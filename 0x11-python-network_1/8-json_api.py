@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     try:
         res = r.json()
-    except JSONDecodeError:
+    except exception:
         print("Not a valid JSON")
     else:
         if len(res) == 0:
