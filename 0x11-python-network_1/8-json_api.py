@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ Will take in letter as input and send post request """
 
 from sys import argv
