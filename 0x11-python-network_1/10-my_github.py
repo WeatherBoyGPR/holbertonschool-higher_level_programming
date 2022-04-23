@@ -11,9 +11,12 @@ if __name__ == "__main__":
     passwd = argv[2]
 
     r = requests.get(url, auth=HTTPBasicAuth(usr, passwd))
-    try:
-        res = r.json()
-    except ValueError:
-        print(None)
+    if r.status_code != 401:
+        try:
+            res = r.json()
+        except ValueError:
+            print(None)
+        else:
+            print(res['id'])
     else:
-        print(res['id'])
+        print(None)
