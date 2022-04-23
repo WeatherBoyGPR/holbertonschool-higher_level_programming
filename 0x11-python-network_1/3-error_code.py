@@ -9,8 +9,7 @@ from urllib import parse
 if __name__ == "__main__":
     url = argv[1]
     try:
-        res = urlopen(url)
+        with urlopen(url) as res:
+            print(res.read().decode('utf-8'))
     except HTTPError as e:
         print("Error code: {}".format(e.cpde))
-    else:
-        print(res.read().decode('utf-8'))
