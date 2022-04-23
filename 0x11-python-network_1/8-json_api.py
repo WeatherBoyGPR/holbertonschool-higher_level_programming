@@ -11,8 +11,9 @@ if __name__ == "__main__":
         val = argv[1]
     r = requests.post(url, data={'q': val})
 
-    try: res = r.json()
-    except:
+    try:
+        res = r.json()
+    except JSONDecodeError:
         print("Not a valid JSON")
     else:
         if len(res) == 0:
