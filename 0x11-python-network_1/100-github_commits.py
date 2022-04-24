@@ -18,6 +18,6 @@ if __name__ == "__main__":
         sha = res.get('sha')
         author = res.get('commit').get('author').get('name')
         print("{}: {}".format(sha, author))
-        if i == 10:
+        if i == 9:
             break
         i += 1
