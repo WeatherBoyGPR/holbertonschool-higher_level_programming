@@ -12,9 +12,10 @@ if __name__ == "__main__":
     url = url + owner + repo + '/commits'
 
     r = requests.get(url)
+    diction = r.json()
 
     i = 0
-    for res in r.json():
+    for res in diction:
         sha = res.get('sha')
         author = res.get('commit').get('author').get('name')
         print("{}: {}".format(sha, author))
