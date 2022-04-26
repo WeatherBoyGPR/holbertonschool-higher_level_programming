@@ -16,7 +16,7 @@ if __name__ == "__main__":
     i = 0
     for res in r.json():
         sha = res.get('sha')
-        author = res.get('commit').get('`author').get('name')
+        author = res.get('commit').get('author').get('name')
         print("{}: {}".format(sha, author))
         if i == 9:
             break
