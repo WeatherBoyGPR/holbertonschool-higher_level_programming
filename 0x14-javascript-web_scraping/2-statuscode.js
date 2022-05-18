@@ -5,7 +5,12 @@ const axios = require('axios');
 
 const url = process.argv.slice(2)[0];
 
-axios(url)
-  .then(function (response) {
+axios.get(url)
+  .then((response) => {
     console.log(response.status);
+  })
+  .catch((err) => {
+    if (err.response) {
+      console.log(err.response.status);
+    }
   });
