@@ -7,10 +7,10 @@ const url = process.argv.slice(2)[0];
 
 axios.get(url)
   .then((response) => {
-    console.log(response.status);
+    console.log('code: %d', response.status);
   })
   .catch((err) => {
     if (err.response) {
-      console.log(err.response.status);
+      console.log('code: %d', err.response.status);
     }
   });
